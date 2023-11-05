@@ -1,21 +1,32 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import './styles.css'
 import OpenAI from "openai";
 import Herme from '../Assets/Herme.JPG'
 
 
-export default function Sketch() {
+export default function Sketch({ suspectDetails }) {
     const [image_url, setImage_url] = useState("/");
     let inputRef = useRef(null);
     const [loading, setLoading] = useState(false);
+    console.log(suspectDetails)
 
-    const imageGenerator = async () => {
-        alert("Please provide details about the suspect.");
-        if (inputRef.current.value==="") {
-            return 0;
+    useEffect(() => {
+        if (suspectDetails) {
+          // When suspectDetails is updated, call the image generation function
+          imageGenerator(suspectDetails);
+        }
+      }, [suspectDetails]);
+    
+
+    const imageGenerator = async (details) => {
+        
+        if (!details && !inputRef.current.value) {
+            alert("Please provide details about the suspect.");
+            return;
         }
         setLoading(true);
-        const detectivePrompt = `You are a detective. You will be given details of a suspect. Your job is to use these details to sketch an image of the suspect and provide a real life image. Details: ${inputRef.current.value}`;
+        const detailText = details || inputRef.current.value;
+        const detectivePrompt = `You are a detective. You will be given details of a suspect. Your job is to use these details to sketch an image of the suspect and provide a real life image. Details: ${detailText}`;
         const response = await fetch('https://api.openai.com/v1/images/generations',
         {
             method: "POST",
@@ -50,7 +61,7 @@ export default function Sketch() {
             </div>
             <div className="search-box">
                 <input type="text" ref={inputRef} className="search-input" placeholder='Describe the suspect in great detail'/>
-                <div className="generate-btn" onClick={()=>{imageGenerator()}}>Identify</div>
+                <div className="generate-btn" onClick={()=>{ suspectDetails && imageGenerator(suspectDetails)}}>Identify</div>
             </div>
             </div>
         </>
