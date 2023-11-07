@@ -1,7 +1,7 @@
 import { useState, useRef } from "react"
 import OpenAI from "openai";
-import Sketch
- from "../Sketch";
+import SketchAi from "../SketchAi";
+
 export default function DetectiveChat() {
     const [input, setInput] = useState('');
     const [messages, setMessages] = useState([]);
@@ -63,7 +63,7 @@ export default function DetectiveChat() {
                         {msg.text}
                     </div>
                 ))}
-                 <Sketch suspectDetails={suspectDetails} />
+                 <SketchAi suspectDetails={suspectDetails} />
             </div>
         <textarea
             value={input}
