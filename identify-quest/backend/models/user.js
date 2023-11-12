@@ -1,5 +1,34 @@
 const mongoose = require("mongoose");
 
+  
+const EmergencyServiceSchema = new mongoose.Schema({
+    id: Number,
+  name: String,
+  address: String,
+  city: String,
+  state: String,
+  telephone: String,
+  county: String,
+  website: String
+});
+
+
+
+const SketchSchema = new mongoose.Schema({
+    image_url: {
+        type: String,
+        required: true,
+    },
+    suspectDetails: {
+        type: String,
+        default: ''
+    },
+    createdOn: {
+        type: Date,
+        default: Date.now
+    }
+});
+
 const UserSchema = new mongoose.Schema({
 	email: { 
         type: String,
@@ -13,24 +42,11 @@ const UserSchema = new mongoose.Schema({
     },
 	password: { 
         type: String,
-        unique: true,
         required: true,
     },
-	crime_location: { 
-        type: String,
-        unique: true,
-        required: false,
-    },
-	emergency_contacts: { 
-        type: String, 
-        minlength: 6,
-        required: false,
-    },
-	sketch: { 
-        type: String, 
-        minlength: 6,
-        required: false,
-    },
+    emergencyService: [EmergencyServiceSchema],
+    evidence: [SketchSchema],
+    
 })
 
 module.exports = mongoose.model('User', UserSchema)

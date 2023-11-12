@@ -2,7 +2,7 @@ import { useState, useRef } from "react"
 import OpenAI from "openai";
 import SketchAi from "../SketchAi";
 
-export default function DetectiveChat() {
+export default function DetectiveChat({ onImageURLChange, onDetailsSubmit, userId }) {
     const [input, setInput] = useState('');
     const [messages, setMessages] = useState([]);
     const [suspectDetails, setSuspectDetails] = useState(null);
@@ -52,9 +52,12 @@ export default function DetectiveChat() {
 
         if (aiResponse) {
             setSuspectDetails(aiResponse);
+            onDetailsSubmit(aiResponse);
         } 
         setInput('');  
     }
+    
+
     return(
         <div>
             <div className="chat-container">
@@ -63,7 +66,7 @@ export default function DetectiveChat() {
                         {msg.text}
                     </div>
                 ))}
-                 <SketchAi suspectDetails={suspectDetails} />
+                 <SketchAi onImageURLChange={onImageURLChange} suspectDetails={suspectDetails} />
             </div>
         <textarea
             value={input}

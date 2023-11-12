@@ -1,0 +1,12 @@
+.user-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    border-radius: 10px;
+    border-style: dotted;
+    background: rgb(red, green, blue);
+    align-items: center;
+    align-content: center;
+}
