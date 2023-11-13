@@ -12,9 +12,9 @@ export default function NewUser() {
   }
 
   function searchEmergencyServices() {
-    fetch(`https://localhost:3000/api/csv?city=${encodeURIComponent(formData.city)}`)
-    .then(response => response.json()) 
-    .then(data => {
+    fetch(`/api/csv?city=${encodeURIComponent(formData.city)}`)
+      .then(response => response.json()) 
+      .then(data => {
       console.log(data) 
       setEmergencyServices(data);
     })
