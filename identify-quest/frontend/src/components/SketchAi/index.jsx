@@ -4,6 +4,7 @@ import { Link, useParams, useLocation } from "react-router-dom"
 import PropTypes from 'prop-types';
 import { updateUserProfile, getUserProfile } from "../../../utils/backend";
 
+
 SketchAi.propTypes = {
   onImageURLChange: PropTypes.func,
   suspectDetails: PropTypes.string
@@ -16,7 +17,7 @@ export default function SketchAi({ onImageURLChange, suspectDetails }) {
     const [isRestrictedUser, setIsRestrictedUser] = useState(false);
     const { userId } = useParams(); // If using URL parameters
     const location = useLocation(); // Get the current location
-    const [image_url, setImage_url] = useState('/assets/ai-face-sketch.mp4');
+    const [image_url, setImage_url] = useState('https://www.youtube.com/embed/Sspcf1nXplE'); // YouTube video embed URL
     
     console.log('onImageURLChange prop:', onImageURLChange);
 
@@ -120,9 +121,10 @@ const handleSave = async () => {
         console.error('Error updating profile with new evidence:', error);
     }
 };
-console.log(userId)
+
 const isHomePage = location.pathname === '/';
-const contentIsVideo = image_url.endsWith('.mp4');
+const contentIsVideo = image_url.includes('youtube.com');
+
 return (
     <>
         <div className='ai-detective'>
@@ -131,17 +133,18 @@ return (
                     <Link to="/evidence">
                         <div className="image">
                             {contentIsVideo ? (
-                                <video src={image_url} 
-                                    autoPlay 
-                                    loop 
-                                    muted 
-                                    alt="Suspect"
-                                />
+                                <iframe
+                                    src={image_url}
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                    title="Suspect"
+                                ></iframe>
                             ) : (
                                 <img src={image_url} alt="Suspect" />
                             )}
                         </div>
-                </Link>
+                    </Link>
                 <div className="loading">
                     <div className={loading ? "loading-bar-full" : "loading-bar"}></div>
                     <div className={loading ? "loading-text" : "display-none"}>Loading....</div>
