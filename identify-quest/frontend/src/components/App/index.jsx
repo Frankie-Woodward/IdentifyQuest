@@ -37,7 +37,7 @@ export default function App() {
   return (
     <>
     
-      <nav className="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+      <nav className="navbar bg-dark border-bottom border-body" id="thenav" data-bs-theme="dark">
         <div className="container-fluid">
         
           <Link className="navbar-brand" to="/">Identify Quest</Link>

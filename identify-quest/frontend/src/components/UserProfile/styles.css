@@ -19,3 +19,42 @@
     border: 1px solid #ccc; /* Optional */
     margin: 10px 0; /* Optional */
 }
+.suspect-details {
+    display: none;
+  }
+  
+  .suspect-details:target {
+    display: block;
+    border-style: solid;
+    border-width: 5px;
+    width: 75%;
+  }
+  .user-profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 150px; /* Add some space at the bottom for the absolute positioned element */
+  }
+  
+  .user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .user-evidence {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  
+  .user-local-emerg {
+    /* Removed absolute positioning */
+    margin-top: 20px; /* Adjust as needed */
+  }
+  
+  .user-element {
+    text-align: center;
+  }
+  

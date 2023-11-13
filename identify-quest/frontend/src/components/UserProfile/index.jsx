@@ -66,8 +66,10 @@ export default function UserProfile() {
   } else if (user) {
     userProfileElement = (
       <div className="user-profile">
-        <p className="user-element">{user.email}</p>
-        <p className="user-element">{user.username}</p>
+        <div className="user-info">
+          <p className="user-element">{user.email}</p>
+          <p className="user-element">{user.username}</p>
+        </div>
 
         {user.emergencyService && (
                 <div className="user-local-emerg">
@@ -80,15 +82,20 @@ export default function UserProfile() {
                     <p>Website: <a href={user.emergencyService.website} target="_blank" rel="noopener noreferrer">{user.emergencyService.website}</a></p>
                 </div>
             )}
-        <div className="user-evidence">
-            {user.evidence.map((item, index) => (
-                <div key={item._id || index} className="evidence-item">
-                    <p>Suspect Details: {item.suspectDetails}</p>
-                    <img src={item.image_url} alt="Suspect" />
-                    <p>Date Added: {new Date(item.createdOn).toLocaleDateString()}</p>
-                </div>
-            ))}
-        </div>
+      <div className="user-evidence">
+        {user.evidence.map((item, index) => (
+          <div key={item._id || index} className="evidence-item">
+            <a href={`#suspect-details-${index}`}>
+              <img src={item.image_url} alt="Suspect" />
+            </a>
+            <div id={`suspect-details-${index}`} className="suspect-details">
+              <p>Suspect Details: {item.suspectDetails}</p>
+              <p>Date Added: {new Date(item.createdOn).toLocaleDateString()}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
 
         <button onClick={() => setFormMode('edit')} className="toggle-button">Edit Profile</button>
         <button onClick={handleDelete} className="delete-btn">Delete</button>

@@ -1,9 +1,11 @@
 import { useRef, useState, useEffect } from "react";
 import './styles.css'
-import Herme from '../Assets/Herme.JPG'
 import { Link, useParams, useLocation } from "react-router-dom"
 import PropTypes from 'prop-types';
 import { updateUserProfile, getUserProfile } from "../../../utils/backend";
+import AiFaceSketchVideo from '../Assets/ai-face-sketch.mp4';
+
+
 
 SketchAi.propTypes = {
   onImageURLChange: PropTypes.func,
@@ -12,12 +14,13 @@ SketchAi.propTypes = {
 
 
 export default function SketchAi({ onImageURLChange, suspectDetails }) {
-    const [image_url, setImage_url] = useState(Herme);
+
     let inputRef = useRef(null);
     const [loading, setLoading] = useState(false);
     const [isRestrictedUser, setIsRestrictedUser] = useState(false);
     const { userId } = useParams(); // If using URL parameters
     const location = useLocation(); // Get the current location
+    const [image_url, setImage_url] = useState(AiFaceSketchVideo);
 
     
     console.log('onImageURLChange prop:', onImageURLChange);
@@ -124,13 +127,25 @@ const handleSave = async () => {
 };
 console.log(userId)
 const isHomePage = location.pathname === '/';
+const contentIsVideo = image_url.endsWith('.mp4');
 return (
     <>
         <div className='ai-detective'>
-            <div className="header">Sus<span>pect </span>Sketch</div>
-            <div className="img-loading">
-                <Link to="/evidence">
-                    <div className="image"><img src={image_url ? image_url : Herme} alt="Suspect" /></div>
+                <div className="sketch-title">Sus<span>pect </span>Sketch</div>
+                <div className="img-loading">
+                    <Link to="/evidence">
+                        <div className="image">
+                            {contentIsVideo ? (
+                                <video src={image_url} 
+                                    autoPlay 
+                                    loop 
+                                    muted 
+                                    alt="Suspect"
+                                />
+                            ) : (
+                                <img src={image_url} alt="Suspect" />
+                            )}
+                        </div>
                 </Link>
                 <div className="loading">
                     <div className={loading ? "loading-bar-full" : "loading-bar"}></div>

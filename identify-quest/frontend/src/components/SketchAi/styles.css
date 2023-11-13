@@ -1,3 +1,10 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 .ai-detective {
     display: flex;
@@ -9,23 +16,31 @@
     gap: 30px;
 }
 
-.header {
+.sketch-title {
     font-size: 70px;
     font-weight: 500;
     padding-bottom: 30px;
+    margin-bottom: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
-.header span {
+.sketch-title span {
     color:deepskyblue;
     font-weight: 600;
 }
 .img-loading {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .img-loading img {
     width: 512px;
+    border: 3px solid #007bff;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .search-box {
@@ -64,7 +79,10 @@
     border-radius: 50px;
     background: deepskyblue;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
 }
+
 .loading-bar {
     width: 0;
     height: 8px;
@@ -84,4 +102,10 @@
 }
 .display-none{
     display: none;
+}
+
+.image video {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
 }
