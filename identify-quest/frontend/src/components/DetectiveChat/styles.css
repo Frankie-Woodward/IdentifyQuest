@@ -1,0 +1,33 @@
+.evidence {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chat-container {
+    
+    background-color: black;
+    color: yellow;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    border: 5px solid #948d8d;
+    overflow-y: auto; /* For scroll */
+    height: 300px; /* Adjust as needed */
+    width: 50%; /* Adjust as needed */
+}
+
+/* Additional styling for individual messages, if needed */
+.chat-message {
+    margin-bottom: 8px;
+}
+.submit-box {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 50vw;
+    margin-top: 20px;
+}
+
+.submit-evidence {
+    width: 25%;
+}

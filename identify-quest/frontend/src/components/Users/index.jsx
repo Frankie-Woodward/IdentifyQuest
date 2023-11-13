@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import UserProfile from '../UserProfile';
 import { getUsers } from '../../../utils/backend';
 import { Link } from 'react-router-dom'; // Import Link from React Router
+import './styles.css';
 
 export default function Users() {
   const [users, setUsers] = useState([]);
@@ -20,7 +21,7 @@ const userElements = users.length > 0 ? users.map(user => (
 
 console.log(users)
   return (
-    <div>
+    <div className='users-container'>
       {userElements}
     </div>
   );

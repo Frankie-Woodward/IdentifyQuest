@@ -15,10 +15,17 @@ export default function SketchAi({ onImageURLChange, suspectDetails }) {
     const [image_url, setImage_url] = useState(Herme);
     let inputRef = useRef(null);
     const [loading, setLoading] = useState(false);
-    console.log('onImageURLChange prop:', onImageURLChange);
+    const [isRestrictedUser, setIsRestrictedUser] = useState(false);
     const { userId } = useParams(); // If using URL parameters
+    const location = useLocation(); // Get the current location
+
     
-    
+    console.log('onImageURLChange prop:', onImageURLChange);
+
+
+    useEffect(() => {
+        setIsRestrictedUser(userId === 'restrictedUserId');
+    }, [userId]);
 
     useEffect(() => {
         
@@ -115,30 +122,30 @@ const handleSave = async () => {
         console.error('Error updating profile with new evidence:', error);
     }
 };
-
-
-
-
-    return (
-        <>
+console.log(userId)
+const isHomePage = location.pathname === '/';
+return (
+    <>
         <div className='ai-detective'>
-            <div className="header"> Sus<span>pect </span>Sketch</div>
+            <div className="header">Sus<span>pect </span>Sketch</div>
             <div className="img-loading">
-            <Link to="/evidence">
-                <div className="image"><img src={image_url ? image_url : Herme} alt="Suspect" /></div>
+                <Link to="/evidence">
+                    <div className="image"><img src={image_url ? image_url : Herme} alt="Suspect" /></div>
                 </Link>
                 <div className="loading">
-                    <div className={loading?"loading-bar-full":"loading-bar"}></div>
-                    <div className={loading?"loading-text":"display-none"}>Loading....</div>
+                    <div className={loading ? "loading-bar-full" : "loading-bar"}></div>
+                    <div className={loading ? "loading-text" : "display-none"}>Loading....</div>
                 </div>
             </div>
+            {!isRestrictedUser && isHomePage && (
             <div className="search-box">
+            
                 <input type="text" ref={inputRef} className="search-input" placeholder='Describe the suspect in great detail'/>
                 <div className="generate-btn" onClick={() => imageGenerator(inputRef.current.value)}>Identify</div>
-            </div>
+                
+            </div>)}
             <button onClick={handleSave}>Save Suspect</button>
-
-            </div>
-        </>
-    )
+        </div>
+    </>
+);
 }

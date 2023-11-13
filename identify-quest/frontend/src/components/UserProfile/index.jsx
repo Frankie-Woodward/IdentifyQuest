@@ -8,7 +8,7 @@ export default function UserProfile() {
   const [user, setUser] = useState(null);
   const [formMode, setFormMode] = useState('edit'); // Only 'edit' mode needed
   const [formData, setFormData] = useState({ email: '', username: '', password: '' });
-
+  
   useEffect(() => {
     let isMounted = true;
     if (userId) {
@@ -69,14 +69,17 @@ export default function UserProfile() {
         <p className="user-element">{user.email}</p>
         <p className="user-element">{user.username}</p>
 
-        <div className="user-local-emerg">
-            {user.emergencyService.map((item, index) => (
-                <div key={item._id || index} className="emerge-item">
-                    <p>Local 911 Services: {item.name}</p>
-                    <p>Date Added: {new Date(item.createdOn).toLocaleDateString()}</p>
+        {user.emergencyService && (
+                <div className="user-local-emerg">
+                    <p>Emergency Service Name: {user.emergencyService.name}</p>
+                    <p>Address: {user.emergencyService.address}</p>
+                    <p>City: {user.emergencyService.city}</p>
+                    <p>State: {user.emergencyService.state}</p>
+                    <p>Telephone: {user.emergencyService.telephone}</p>
+                    <p>County: {user.emergencyService.county}</p>
+                    <p>Website: <a href={user.emergencyService.website} target="_blank" rel="noopener noreferrer">{user.emergencyService.website}</a></p>
                 </div>
-            ))}
-        </div>
+            )}
         <div className="user-evidence">
             {user.evidence.map((item, index) => (
                 <div key={item._id || index} className="evidence-item">
@@ -96,9 +99,10 @@ export default function UserProfile() {
 
   return (
     <div className="user-profile-container">
-      <h1>User Profile</h1>
-      <h2>Edit Profile</h2>
+      <h1>Welcome to the Profile of:</h1>
+      {user && <h2>{user.username}</h2>} {/* Safely accessing username */}
       {userProfileElement}
     </div>
   );
+  
 }

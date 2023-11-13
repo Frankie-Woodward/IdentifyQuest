@@ -1,6 +1,7 @@
 import { useState, useRef } from "react"
 import OpenAI from "openai";
 import SketchAi from "../SketchAi";
+import './styles.css'
 
 export default function DetectiveChat({ onImageURLChange, onDetailsSubmit, userId }) {
     const [input, setInput] = useState('');
@@ -59,21 +60,21 @@ export default function DetectiveChat({ onImageURLChange, onDetailsSubmit, userI
     
 
     return(
-        <div>
+        <div className="evidence">
+            <SketchAi onImageURLChange={onImageURLChange} suspectDetails={suspectDetails} />
             <div className="chat-container">
                 {messages.map((msg, index) => (
                     <div key={index} className={`message ${msg.fromAI ? "ai-message" : "user-message"}`}>
                         {msg.text}
                     </div>
                 ))}
-                 <SketchAi onImageURLChange={onImageURLChange} suspectDetails={suspectDetails} />
             </div>
-        <textarea
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Describe the suspect..."
-        />
-      <button onClick={handleSubmit}>Submit Details</button>
+            <textarea className="submit-box"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Describe the suspect..."
+            />
+            <button className="submit-evidence" onClick={handleSubmit}>Submit Details</button>
         </div>
     )
 }

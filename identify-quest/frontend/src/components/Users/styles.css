@@ -1,0 +1,28 @@
+/* Styles for centering and user list */
+.users-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 50px;
+  }
+  
+  .user-profile-link {
+
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 5px 0;
+    width: 30%; /* Adjust width as needed */
+    text-align: center;
+    background-color: rgb(141, 108, 57);
+  }
+  
+  .user-profile-link a {
+    text-decoration:wavy;
+    color: #ffffff;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  

@@ -44,7 +44,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    emergencyService: [EmergencyServiceSchema],
+    emergencyService: {
+        type: EmergencyServiceSchema,
+        default: () => ({})
+    },
     evidence: [SketchSchema],
     
 })
