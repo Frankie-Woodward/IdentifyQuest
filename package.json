@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "scripts": {
     "frontend": "vite",
-    "backend": "nodemon backend/server.js",
-    "start": "vite build && node backend/server.js"
+    "backend": "nodemon identify-quest/backend/server.js",
+    "start": "vite build && node identify-quest/backend/server.js"
   },
   "dependencies": {
     "@types/react": "^18.2.15",
