@@ -6,7 +6,7 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [react()],
-    root: path.resolve(__dirname, 'frontend'),
+    root: './identify-quest/frontend',
     // envFile: path.resolve(__dirname, '.env'),
     server: {
         proxy: {
