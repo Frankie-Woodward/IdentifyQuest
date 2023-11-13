@@ -17,7 +17,7 @@ export default function SketchAi({ onImageURLChange, suspectDetails }) {
     const [isRestrictedUser, setIsRestrictedUser] = useState(false);
     const { userId } = useParams(); // If using URL parameters
     const location = useLocation(); // Get the current location
-    const [image_url, setImage_url] = useState('https://www.youtube.com/embed/Sspcf1nXplE?autoplay=1&mute=1');
+    const [image_url, setImage_url] = useState('https://www.youtube.com/embed/Sspcf1nXplE?autoplay=1&mute=1&loop=1&playlist=Sspcf1nXplE');
     
     console.log('onImageURLChange prop:', onImageURLChange);
 
