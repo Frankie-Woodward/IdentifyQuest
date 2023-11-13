@@ -3,15 +3,11 @@ import './styles.css'
 import { Link, useParams, useLocation } from "react-router-dom"
 import PropTypes from 'prop-types';
 import { updateUserProfile, getUserProfile } from "../../../utils/backend";
-import AiFaceSketchVideo from '../Assets/ai-face-sketch.mp4';
-
-
 
 SketchAi.propTypes = {
   onImageURLChange: PropTypes.func,
   suspectDetails: PropTypes.string
 };
-
 
 export default function SketchAi({ onImageURLChange, suspectDetails }) {
 
@@ -20,8 +16,7 @@ export default function SketchAi({ onImageURLChange, suspectDetails }) {
     const [isRestrictedUser, setIsRestrictedUser] = useState(false);
     const { userId } = useParams(); // If using URL parameters
     const location = useLocation(); // Get the current location
-    const [image_url, setImage_url] = useState(AiFaceSketchVideo);
-
+    const [image_url, setImage_url] = useState('/assets/ai-face-sketch.mp4');
     
     console.log('onImageURLChange prop:', onImageURLChange);
 
