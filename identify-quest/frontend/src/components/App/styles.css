@@ -1,7 +1,5 @@
-#thenav {
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: center;
-
+.logo {
+    width:8% ;
+    border-style: solid;
+    border-radius: 100%;
 }

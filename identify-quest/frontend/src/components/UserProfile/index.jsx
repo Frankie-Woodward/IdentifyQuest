@@ -60,28 +60,19 @@ export default function UserProfile() {
         <br />
         <input name="username" placeholder="Username" value={formData.username} onChange={handleInputChange} />
         <br />
-        <button type="submit">Update</button>
+        <button type="submit">Accept</button>
       </form>
     );
   } else if (user) {
     userProfileElement = (
       <div className="user-profile">
         <div className="user-info">
-          <p className="user-element">{user.email}</p>
-          <p className="user-element">{user.username}</p>
+          <p className="user-element">Contact me @: {user.email}</p>
         </div>
 
-        {user.emergencyService && (
-                <div className="user-local-emerg">
-                    <p>Emergency Service Name: {user.emergencyService.name}</p>
-                    <p>Address: {user.emergencyService.address}</p>
-                    <p>City: {user.emergencyService.city}</p>
-                    <p>State: {user.emergencyService.state}</p>
-                    <p>Telephone: {user.emergencyService.telephone}</p>
-                    <p>County: {user.emergencyService.county}</p>
-                    <p>Website: <a href={user.emergencyService.website} target="_blank" rel="noopener noreferrer">{user.emergencyService.website}</a></p>
-                </div>
-            )}
+      <Link to={{ pathname: `/detective-chat/${user._id}`, state: `${user}` }}>Create New Sketch</Link>
+     <br></br>
+      <div className="evidence-container">
       <div className="user-evidence">
         {user.evidence.map((item, index) => (
           <div key={item._id || index} className="evidence-item">
@@ -95,11 +86,22 @@ export default function UserProfile() {
           </div>
         ))}
       </div>
-
-
+      </div>
+      {user.emergencyService && (
+                <div className="user-local-emerg">
+                  <h4><strong>My Local 911 Servicing Station</strong></h4>
+                    <p>Emergency Service Name: {user.emergencyService.name}</p>
+                    <p>Address: {user.emergencyService.address}</p>
+                    <p>City: {user.emergencyService.city}</p>
+                    <p>State: {user.emergencyService.state}</p>
+                    <p>Telephone: {user.emergencyService.telephone}</p>
+                    <p>County: {user.emergencyService.county}</p>
+                    <p>Website: <a href={user.emergencyService.website} target="_blank" rel="noopener noreferrer">{user.emergencyService.website}</a></p>
+                </div>
+            )}
         <button onClick={() => setFormMode('edit')} className="toggle-button">Edit Profile</button>
+       <br></br>
         <button onClick={handleDelete} className="delete-btn">Delete</button>
-        <Link to={{ pathname: `/detective-chat/${user._id}`, state: `${user}` }}>Create New Sketch</Link>
       </div>
     );
   }
@@ -107,7 +109,11 @@ export default function UserProfile() {
   return (
     <div className="user-profile-container">
       <h1>Welcome to the Profile of:</h1>
-      {user && <h2>{user.username}</h2>} {/* Safely accessing username */}
+      <br></br>
+      {user && <h2>{user.username}</h2>} {/* conditional to safely access username */}
+      <br></br>
+   
+      <br></br>
       {userProfileElement}
     </div>
   );

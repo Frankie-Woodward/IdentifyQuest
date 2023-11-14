@@ -12,12 +12,13 @@
 }
 
 .evidence-item img {
-    max-width: 200px;
-    max-height: 200px;
-    width: auto;
-    height: auto;
-    border: 1px solid #ccc; /* Optional */
-    margin: 10px 0; /* Optional */
+  max-width: 200px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  border: 1px solid #ccc; /* Optional */
+  margin: 20px; /* Increased margin for more space around images */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds subtle shadow for depth */
 }
 .suspect-details {
     display: none;
@@ -28,33 +29,64 @@
     border-style: solid;
     border-width: 5px;
     width: 75%;
-  }
+    margin: 0 auto; /* Centers the details block */
+    padding: 10px; /* Adds padding inside the details block */
+    background-color: #060606; /* Optional: Adds background color for visibility */
+}
   .user-profile-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 150px; /* Add some space at the bottom for the absolute positioned element */
+    margin-top: 40px;
+    
   }
   
   .user-profile {
     display: flex;
     flex-direction: column;
     align-items: center;
+
   }
   
   .user-evidence {
     display: flex;
-    justify-content: center;
+    justify-content: space-around; /* Adjusts spacing between items */
     flex-wrap: wrap;
+    gap: 20px; /* Adds space between rows and columns */
     margin: 20px 0;
-  }
+    padding: 10px; /* Optional: Adds padding inside the container */
+}
+
   
-  .user-local-emerg {
-    /* Removed absolute positioning */
-    margin-top: 20px; /* Adjust as needed */
-  }
-  
+.user-local-emerg {
+  border: 1px solid #ddd; /* Adds a subtle border */
+  border-radius: 10px; /* Rounds the corners */
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5); /* Adds a light shadow for depth */
+  padding: 15px; /* Adds internal spacing */
+  margin-top: 20px; /* Adjust as needed */
+  word-wrap: break-word; /* Ensures long words wrap */
+  max-width: 600px; /* Maximum width */
+  margin: 20px auto; /* Centers the block with margin */
+  width: 400px;
+  height: 310px;
+
+}
+
+.user-local-emerg h4, .user-local-emerg p {
+  margin-bottom: 10px; /* Adds space between elements */
+  text-align: left; /* Aligns text to the left */
+}
+
   .user-element {
     text-align: center;
   }
-  
+  /* Add this new class in styles.css */
+.evidence-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+  gap: 10px; /* Adds space between cards */
+  border-radius: 5%;
+  box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.5);
+}

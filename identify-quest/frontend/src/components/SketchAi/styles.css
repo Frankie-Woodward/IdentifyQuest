@@ -1,10 +1,4 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 .ai-detective {
     display: flex;
@@ -14,6 +8,7 @@ body {
     margin-top: 80px;
     margin-bottom: 20px;
     gap: 30px;
+
 }
 
 .sketch-title {
@@ -45,12 +40,13 @@ body {
 
 .search-box {
     display: flex;
-    width: 1000px;
+    width: 700px;
     height: 95px;
     justify-content: space-around;
     align-items: center;
     border-radius: 50px;
     background:rgb(121, 80, 58);
+    margin-bottom: 30px;
 }
 
 .search-input {
@@ -73,7 +69,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 300px;
+    width: 200px;
     height: 85px;
     font-size: 20px;
     border-radius: 50px;
@@ -110,4 +106,22 @@ body {
     max-width: 100%;
     border-radius: 15px;
     box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
+}
+@media only screen and (max-width: 600px) {
+    .search-box {
+        width: 300px;
+        justify-content: start; /* Adjust the positioning */
+        padding: 10px; /* Add some padding for breathing space */
+    }
+
+    .search-input {
+        width: calc(100% - 100px); /* Reduce width, leave space for button */
+        margin-right: 5px; /* Adjust margin */
+    }
+
+    .generate-btn {
+        width: 95px; /* Reduce button width */
+        height: 65px; /* Optionally adjust the height */
+        font-size: 16px; /* Adjust font size if necessary */
+    }
 }

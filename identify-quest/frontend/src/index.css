@@ -1,5 +1,8 @@
+
 body {
   margin: 0;
-  background: rgb(57, 36, 36);
+  background: linear-gradient(to bottom, #814327c6 40%, #4c270c 60%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: aliceblue;
 }

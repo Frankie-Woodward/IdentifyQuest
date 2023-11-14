@@ -116,7 +116,7 @@ const handleSave = async () => {
 
         // Update your local user object if necessary
         // user = updatedProfile; // Uncomment and modify this line based on your state management
-
+        window.location.href = `/users/userprofile/${userId}`;
     } catch (error) {
         console.error('Error updating profile with new evidence:', error);
     }
@@ -145,6 +145,8 @@ return (
                             )}
                         </div>
                     </Link>
+                    <button onClick={handleSave}>Save Suspect</button>
+
                 <div className="loading">
                     <div className={loading ? "loading-bar-full" : "loading-bar"}></div>
                     <div className={loading ? "loading-text" : "display-none"}>Loading....</div>
@@ -157,7 +159,6 @@ return (
                 <div className="generate-btn" onClick={() => imageGenerator(inputRef.current.value)}>Identify</div>
                 
             </div>)}
-            <button onClick={handleSave}>Save Suspect</button>
         </div>
     </>
 );

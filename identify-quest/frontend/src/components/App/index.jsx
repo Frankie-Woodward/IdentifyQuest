@@ -5,9 +5,10 @@ import UserProfile from '../UserProfile';
 import DetectiveChat from '../DetectiveChat';
 import HomePage from '../HomePage';
 import SketchAi from '../SketchAi';
-import Evidence from '../Evidence';
 import Users from '../Users';
 import NewUser from '../NewUser';
+import logo from '../../components/Assets/logo.jpg';
+
 
 export default function App() {
   const [imageURL, setImageURL] = useState([]);
@@ -40,19 +41,15 @@ export default function App() {
       <nav className="navbar bg-dark border-bottom border-body" id="thenav" data-bs-theme="dark">
         <div className="container-fluid">
         
-          <Link className="navbar-brand" to="/">Identify Quest</Link>
+          <Link className="navbar-brand" to="/"><img className="logo" src={logo} alt="Logo" />  Identify Quest</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <Link className="nav-link" aria-current="page" to="/login">Log-in</Link>
               <Link className="nav-link" to="/users/userprofile/:userId">Profile</Link>
               <Link className="nav-link" to="/users">All Users</Link>
-              <Link className="nav-link" to="/sketch-ai/:userId">Your Sketches</Link>
-              <Link className="nav-link" to="/evidence">The Sketch</Link>
               <Link className="nav-link" to="/new-user">Join Us!</Link>
-              <Link className="nav-link" to="/detective-chat/:userId">Report a Suspect</Link>
             
             </div>
           </div>
@@ -67,7 +64,6 @@ export default function App() {
 } />
        <Route path="/users" element={<Users />} />
        <Route path="/new-user" element={<NewUser />} />
-       <Route path="/evidence" element={<Evidence suspectDetails={suspectDetails} imageURL={imageURL} />} />
       </Routes>
     </>
   );

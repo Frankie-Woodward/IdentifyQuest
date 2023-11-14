@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    margin-top: 50px;
+    margin-top: 20px;
   }
   
   .user-profile-link {
@@ -12,9 +12,10 @@
     border: 1px solid #ddd;
     padding: 10px;
     margin: 5px 0;
-    width: 30%; /* Adjust width as needed */
+    width: 100%; /* Adjust width as needed */
     text-align: center;
-    background-color: rgb(141, 108, 57);
+    background-color: rgb(28, 18, 2);
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
   }
   
   .user-profile-link a {
@@ -25,4 +26,26 @@
   .text-center {
     text-align: center;
   }
+  .outer-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px; /* This adds space around users-container */
+    background-color: #b19d74; /* Different color for the background */
+    margin: 100px; /* Optional margin for spacing */
+    border-radius: 10px; /* Optional for rounded corners */
+    border-style: solid;
+    border-width: 10px;
+    border-color: black;
+  }
   
+  .all-users {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  body {
+    height: 100vh;
+  }

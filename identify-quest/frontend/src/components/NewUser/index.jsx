@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { createUserProfile } from '../../../utils/backend';
 import { useNavigate } from 'react-router-dom';
+import './styles.css'
 
 export default function NewUser() {
   const [formData, setFormData] = useState({ email: '', username: '', password: '', city: '', selectedService: '' });
@@ -39,7 +40,7 @@ export default function NewUser() {
   return (
     <div className="new-user-container">
       <h1>Create New User</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='new-user-form'>
         <input name="email" placeholder="Your email" value={formData.email} onChange={handleInputChange} />
         <br />
         <input name="username" placeholder="Username" value={formData.username} onChange={handleInputChange} />

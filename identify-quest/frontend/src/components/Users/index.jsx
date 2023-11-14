@@ -20,9 +20,16 @@ const userElements = users.length > 0 ? users.map(user => (
 // conditionally display the text of the create form button
 
 console.log(users)
-  return (
+return (
+  <div className='all-users'>
+    <h1>View All of Our Current Users Below!</h1>
+
+    
+  <div className='outer-container'> 
     <div className='users-container'>
       {userElements}
     </div>
-  );
+  </div>
+  </div>
+);
 }

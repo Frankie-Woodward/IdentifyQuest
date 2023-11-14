@@ -1,9 +1,11 @@
 import SketchAi from "../SketchAi"
+import './styles.css'
+
 
 export default function HomePage(props) {
   return (
     <>
-      <h1>Welcome to Identify Quest</h1>
+    
       <SketchAi suspectDetails={props.suspectDetails} />
     </>
   )
