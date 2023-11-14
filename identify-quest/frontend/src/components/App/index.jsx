@@ -8,7 +8,7 @@ import SketchAi from '../SketchAi';
 import Users from '../Users';
 import NewUser from '../NewUser';
 import logo from '../../components/Assets/logo.jpg';
-
+import AboutPage from '../AboutPage';
 
 export default function App() {
   const [imageURL, setImageURL] = useState([]);
@@ -50,7 +50,7 @@ export default function App() {
               <Link className="nav-link" to="/users/userprofile/:userId">Profile</Link>
               <Link className="nav-link" to="/users">All Users</Link>
               <Link className="nav-link" to="/new-user">Join Us!</Link>
-            
+              <Link className="nav-link" to="/about-page">About Us</Link>
             </div>
           </div>
         </div>
@@ -64,6 +64,7 @@ export default function App() {
 } />
        <Route path="/users" element={<Users />} />
        <Route path="/new-user" element={<NewUser />} />
+       <Route path="/about-page" element={<AboutPage />} />
       </Routes>
     </>
   );

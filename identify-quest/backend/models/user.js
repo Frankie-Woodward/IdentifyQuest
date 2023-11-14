@@ -13,7 +13,6 @@ const EmergencyServiceSchema = new mongoose.Schema({
 });
 
 
-
 const SketchSchema = new mongoose.Schema({
     image_url: {
         type: String,

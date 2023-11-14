@@ -55,6 +55,12 @@ Users:
     "react": frontend
     "nodeJs": node package manager installed
 
+    openai_api: connect ai to react application
+
+    https://hifld-geoplatform.opendata.arcgis.com/datasets/geoplatform::local-law-enforcement-locations/about
+        arcgis based database that houses a plethora of datasets.
+
+
 ## Installation and Application Use Instructions
     To recreate this project:
     1. Create react app and install npm, express, cors, openai, mongoose, and axios.
@@ -73,8 +79,20 @@ Users:
     6. Give the AI detective in depth description of suspect.
     7. Once you save the data, you will be taken back to your userprofile to view.
 
+## Descriptions of Unsolved Problem and Major Hurdles I Overcame
 
-*  Descriptions of any Unsolved problems or major hurdles you had to overcome
+    1. Integrating AI API into react app: led to API Key in environment issues. 
+    2. Crime data APIs - API documentation was complex. API connectivity locked behind paywall after waiting for response 
+    3. While trying to communicate between front and backend, I realized I had to drop an index in order to update my model schema in mongodb. 
+    4. Spent hours trying to finish my controller routes until....I looked very closely to users controller and realized I was using db>user>find instead of db>user>findById
+    5. Images are supposed to exist indefintely after being created by AI, but access to them becomes lost after 12-24 hours. I may have to use cloud hosting service as the documentation doesn't address this issue.
+    6. When trying to implement 911 services into the app, the API had poor documentation and it was next to impossible to find an endpoint. I had to create a csv file downloaded from somewhere. I learned how to access csv files and that they should be initialized within the backend
+    7. Had to incorporate conditional rendering to show the video by default on the sketch page as well as, upload my mp4 to youtube as I had many issues trying to push the mp4 to github
+    8. Incorporated the use of react's useParams and useRef in order to access user ID in the browser's url and to specify which data will be mutable while creating images through AI
+
 *  Descriptions of next steps you have planned for your application 
     -	Implement AUTH (JWT)
+    -   More Styling
+    -   Adding more prompts for detective AI to create a more human        conversation
+    -   Look into a better crime data api
 
