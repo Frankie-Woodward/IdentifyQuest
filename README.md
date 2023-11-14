@@ -3,10 +3,15 @@ A Facial Recognition Application using AI to generate images
 
 Welcome to Identify Quest, the application which allows users to create ai-generated composite sketches of individuals who have committed a crime and save them to submit to their local 911 emergency teams.
 
-## Wire Frames
-![Alt text](image.png)
-![Alt text](image-2.png)
+## HomePage and New User Screenshot
+<img width="1728" alt="Screenshot 2023-11-13 at 9 00 13 PM" src="https://github.com/Frankie-Woodward/IdentifyQuest/assets/142553084/f378d087-ae43-4780-bd30-5c3855dad913">
+<img width="1728" alt="Screenshot 2023-11-13 at 9 00 29 PM" src="https://github.com/Frankie-Woodward/IdentifyQuest/assets/142553084/d93e04c9-bc69-4917-ac85-d55a6a6cd494">
 
+
+## Wire Frames
+![image](https://github.com/Frankie-Woodward/IdentifyQuest/assets/142553084/dadba441-5d1b-424d-8320-f73933822f48)
+![image](https://github.com/Frankie-Woodward/IdentifyQuest/assets/142553084/aecc8b97-7580-4eda-a31a-4326c178b74a)
+![image](https://github.com/Frankie-Woodward/IdentifyQuest/assets/142553084/b379f9e6-0c49-450d-8f16-08e254fa86e1)
 
 ## GitHub Repository and Heroku Host Site
 
