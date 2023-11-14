@@ -1,5 +1,5 @@
 # IdentifyQuest
-A Facial Recognition Application using AI to generate images
+A Facial Recognition Application using AI to generate images.
 
 Welcome to Identify Quest, the application which allows users to create ai-generated composite sketches of individuals who have committed a crime and save them to submit to their local 911 emergency teams.
 
@@ -25,14 +25,14 @@ Heroku - https://identify-quest-cd810d9e776b.herokuapp.com
 The ability to identify someone that committed a crime is going to be made easier with ai integration. 
 
 As a user I want to: 
-1. be able to test the facial recognition product before I sign up
+1. be able to test the facial recognition product before I sign up.
 
 2. describe in great detail the features of the individual suspect to allow 
-the detective to accurately render an image close to the suspect
+the detective to accurately render an image close to the suspect.
 
-3. save the image to my profile to be shared with local authorities
+3. save the image to my profile to be shared with local authorities.
 
-4. access to local crime data as well as local emergency contacts
+4. access to local crime data as well as local emergency contacts.
 
 ## MVP Goals 
 
