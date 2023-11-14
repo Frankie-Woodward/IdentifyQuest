@@ -30,12 +30,14 @@
     display: flex;
     justify-content: center;
     padding-bottom: 10px; /* This adds space around users-container */
-    background-color: #b19d74; /* Different color for the background */
+    background-color: #79653f; /* Different color for the background */
     margin: 100px; /* Optional margin for spacing */
     border-radius: 10px; /* Optional for rounded corners */
     border-style: solid;
-    border-width: 10px;
+    border-width: 5px;
     border-color: black;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
+
   }
   
   .all-users {

@@ -4,7 +4,6 @@ import { Link, useParams, useLocation } from "react-router-dom"
 import PropTypes from 'prop-types';
 import { updateUserProfile, getUserProfile } from "../../../utils/backend";
 
-
 SketchAi.propTypes = {
   onImageURLChange: PropTypes.func,
   suspectDetails: PropTypes.string

@@ -87,6 +87,7 @@ export default function UserProfile() {
         ))}
       </div>
       </div>
+      <br></br>
       {user.emergencyService && (
                 <div className="user-local-emerg">
                   <h4><strong>My Local 911 Servicing Station</strong></h4>

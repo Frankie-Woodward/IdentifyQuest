@@ -16,11 +16,11 @@
     font-weight: 500;
     padding-bottom: 30px;
     margin-bottom: 20px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .sketch-title span {
-    color:deepskyblue;
+    color:rgb(77, 57, 32);
     font-weight: 600;
 }
 .img-loading {
@@ -73,7 +73,7 @@
     height: 85px;
     font-size: 20px;
     border-radius: 50px;
-    background: deepskyblue;
+    background: rgb(50, 40, 26);
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
@@ -94,7 +94,7 @@
     height: 8px;
     background:deepskyblue ;
     transition: width 15s;
-    
+
 }
 .display-none{
     display: none;
@@ -107,6 +107,7 @@
     border-radius: 15px;
     box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
 }
+
 @media only screen and (max-width: 600px) {
     .search-box {
         width: 300px;
